@@ -171,10 +171,9 @@ class VisualRGBColourspace2D(
         XYZ_to_ij = METHODS_CHROMATICITY_DIAGRAM[self._method]["XYZ_to_ij"]
 
         ij = XYZ_to_ij(
-            xy_to_XYZ(self._colourspace.primaries),
+            xy_to_XYZ(self._colourspace.primaries + EPSILON),
             plotting_colourspace.whitepoint,
         )
-        ij[np.isnan(ij)] = 0
 
         positions = append_channel(
             np.array([ij[0], ij[1], ij[1], ij[2], ij[2], ij[0]]), 0
