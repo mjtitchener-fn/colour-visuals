@@ -218,11 +218,13 @@ class VisualRGBColourspace2D(
             gfx.Geometry(
                 positions=as_contiguous_array(positions),
                 sizes=as_contiguous_array(
-                    full(positions.shape[0], self._thickness * 3)
+                    full(positions.shape[0], self._thickness * 5)
                 ),
                 colors=as_contiguous_array(append_channel(colour_w, self._opacity)),
             ),
-            gfx.PointsMaterial(color_mode="vertex", vertex_sizes=True),
+            gfx.PointsMaterial(
+                color_mode="vertex", size_mode="vertex", size_space="screen"
+            ),
         )
         self.add(self._whitepoint)
 

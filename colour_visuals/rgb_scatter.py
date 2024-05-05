@@ -217,7 +217,9 @@ class VisualRGBScatter3D(
                 sizes=as_contiguous_array(np.full(positions.shape[0], self._size)),
                 colors=as_contiguous_array(append_channel(colour, self._opacity)),
             ),
-            gfx.PointsMaterial(color_mode="vertex", vertex_sizes=True),
+            gfx.PointsMaterial(
+                color_mode="vertex", size_mode="vertex", size_space="screen"
+            ),
         )
         self.add(self._scatter)
 

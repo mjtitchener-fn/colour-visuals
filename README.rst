@@ -70,7 +70,7 @@ Examples
         ),
         colour_visuals.VisualRGBColourspace2D("ACEScg"),
         colour_visuals.VisualRGBColourspace2D(
-            "Display P3", colours=np.array([0.5, 0.5, 0.5])
+            "Display P3", colour=np.array([0.5, 0.5, 0.5])
         ),
         colour_visuals.VisualRGBColourspace3D("Display P3", opacity=0.5, wireframe=True),
         colour_visuals.VisualRGBScatter3D(np.random.random([24, 32, 3]), "ACEScg"),
@@ -107,17 +107,19 @@ Examples
     scene.add(gfx.Background(None, gfx.BackgroundMaterial(np.array([0.18, 0.18, 0.18]))))
 
     visuals = [
-        VisualGrid(size=4),
-        VisualSpectralLocus3D(model="CIE Lab"),
-        VisualPointerGamut3D(model="CIE Lab", colours=np.array([1, 0.5, 0])),
-        VisualRGBColourspace3D(
+        colour_visuals.VisualGrid(size=4),
+        colour_visuals.VisualSpectralLocus3D(model="CIE Lab"),
+        colour_visuals.VisualPointerGamut3D(model="CIE Lab", colour=np.array([1, 0.5, 0])),
+        colour_visuals.VisualRGBColourspace3D(
             "Display P3",
             model="CIE Lab",
             opacity=0.5,
             wireframe=True,
             segments=8,
         ),
-        VisualRGBScatter3D(np.random.random([24, 32, 3]), "Display P3", model="CIE Lab"),
+        colour_visuals.VisualRGBScatter3D(
+            np.random.random([24, 32, 3]), "Display P3", model="CIE Lab"
+        ),
     ]
 
     group = gfx.Group()
