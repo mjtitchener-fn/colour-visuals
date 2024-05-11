@@ -92,7 +92,6 @@ def XYZ_to_colourspace_model(
         "CIE XYZ",
         model,
         illuminant=illuminant,
-        verbose={"mode": "Short"},
         **kwargs,
     )
 
