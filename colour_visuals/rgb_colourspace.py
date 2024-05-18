@@ -170,8 +170,12 @@ class VisualRGBColourspace2D(
 
         XYZ_to_ij = METHODS_CHROMATICITY_DIAGRAM[self._method]["XYZ_to_ij"]
 
+        primaries = self._colourspace.primaries
+
+        primaries[primaries == 0] = EPSILON
+
         ij = XYZ_to_ij(
-            xy_to_XYZ(self._colourspace.primaries + EPSILON),
+            xy_to_XYZ(primaries),
             plotting_colourspace.whitepoint,
         )
 
@@ -180,9 +184,7 @@ class VisualRGBColourspace2D(
         )
 
         if self._colour is None:
-            RGB = XYZ_to_RGB(
-                xy_to_XYZ(self._colourspace.primaries), plotting_colourspace
-            )
+            RGB = XYZ_to_RGB(xy_to_XYZ(primaries), plotting_colourspace)
             colour_g = np.array([RGB[0], RGB[1], RGB[1], RGB[2], RGB[2], RGB[0]])
         else:
             colour_g = np.tile(self._colour, (positions.shape[0], 1))
