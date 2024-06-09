@@ -2,7 +2,7 @@
 Visual Utilities
 ================
 
-Defines the visual utilities.
+Define the visual utilities.
 """
 
 from __future__ import annotations

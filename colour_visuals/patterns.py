@@ -2,7 +2,7 @@
 Pattern Generators
 ==================
 
-Defines various pattern generators:
+Define various pattern generators:
 
 -   :func:`colour_visuals.pattern_hue_swatches`
 -   :func:`colour_visuals.pattern_hue_stripes`

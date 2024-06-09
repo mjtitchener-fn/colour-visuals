@@ -3,7 +3,7 @@
 RGB Scatter Visuals
 ===================
 
-Defines the *RGB* scatter visuals:
+Define the *RGB* scatter visuals:
 
 -   :class:`colour_visuals.VisualRGBScatter3D`
 """

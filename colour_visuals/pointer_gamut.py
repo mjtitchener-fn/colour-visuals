@@ -3,7 +3,7 @@
 Pointer Gamut Visuals
 =====================
 
-Defines the *Pointer's Gamut* visuals:
+Define the *Pointer's Gamut* visuals:
 
 -   :class:`colour_visuals.VisualPointerGamut2D`
 """

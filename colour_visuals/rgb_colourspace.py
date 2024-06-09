@@ -3,7 +3,7 @@
 RGB Colourspace Visuals
 =======================
 
-Defines the *RGB colourspace* visuals:
+Define the *RGB colourspace* visuals:
 
 -   :class:`colour_visuals.VisualRGBColourspace2D`
 -   :class:`colour_visuals.VisualRGBColourspace3D`

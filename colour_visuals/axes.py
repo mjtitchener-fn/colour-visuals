@@ -3,7 +3,7 @@
 Axes Visuals
 ============
 
-Defines the axes visuals:
+Define the axes visuals:
 
 -   :class:`colour_visuals.VisualAxes`
 """

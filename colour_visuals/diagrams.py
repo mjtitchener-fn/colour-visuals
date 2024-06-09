@@ -3,7 +3,7 @@
 Chromaticity Diagram Visuals
 ============================
 
-Defines the *Chromaticity Diagram* visuals:
+Define the *Chromaticity Diagram* visuals:
 
 -   :class:`colour_visuals.VisualSpectralLocus2D`
 -   :class:`colour_visuals.VisualSpectralLocus3D`

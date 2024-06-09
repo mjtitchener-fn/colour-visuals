@@ -3,7 +3,7 @@
 Planckian Locus Visuals
 =======================
 
-Defines the *Planckian Locus* visuals:
+Define the *Planckian Locus* visuals:
 
 -   :class:`colour_visuals.VisualPlanckianLocus`
 """

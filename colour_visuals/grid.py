@@ -3,7 +3,7 @@
 Grid Visuals
 ============
 
-Defines the grid visuals:
+Define the grid visuals:
 
 -   :class:`colour_visuals.VisualGrid`
 """

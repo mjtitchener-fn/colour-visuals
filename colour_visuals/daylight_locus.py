@@ -3,7 +3,7 @@
 Daylight Locus Visuals
 =======================
 
-Defines the *Daylight Locus* visuals:
+Define the *Daylight Locus* visuals:
 
 -   :class:`colour_visuals.VisualDaylightLocus`
 """

@@ -3,7 +3,7 @@
 Rösch-MacAdam Visuals
 =====================
 
-Defines the *Rösch-MacAdam* visuals:
+Define the *Rösch-MacAdam* visuals:
 
 -   :class:`colour_visuals.VisualRoschMacAdam`
 """
