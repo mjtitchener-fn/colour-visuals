@@ -377,7 +377,7 @@ class VisualRGBColourspace3D(
 
         if self._colour is None:
             # NOTE: The colours are normalised by the reciprocal of *self._size*
-            # to avoid unpleasant clipping when displaying HDR volumes, e.g.
+            # to avoid unpleasant clipping when displaying HDR volumes, e.g.,
             # the full ITU-R BT.2020 volume within ICtCp which is using a size
             # of 10000.
             colour = positions * (1.0 / self._size)
