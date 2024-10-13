@@ -13,11 +13,11 @@ from __future__ import annotations
 import numpy as np
 import pygfx as gfx
 from colour.hints import ArrayLike, Literal, LiteralColourspaceModel
+from colour.models import LCHab_to_Lab  # pyright: ignore
 from colour.models import (
     CCS_ILLUMINANT_POINTER_GAMUT,
     DATA_POINTER_GAMUT_VOLUME,
     Lab_to_XYZ,
-    LCHab_to_Lab,
 )
 from colour.plotting import (
     CONSTANTS_COLOUR_STYLE,

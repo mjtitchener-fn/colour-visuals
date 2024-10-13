@@ -1,13 +1,16 @@
-[tool.poetry]
+[project]
 name = "colour-visuals"
 version = "0.1.0"
 description = "WebGPU-based visuals for colour science applications"
-license = "BSD-3-Clause"
-authors = [ "Colour Developers <colour-developers@colour-science.org>" ]
-maintainers = [ "Colour Developers <colour-developers@colour-science.org>" ]
-readme = 'README.rst'
-repository = "https://github.com/colour-science/colour-visuals"
-homepage = "https://www.colour-science.org/"
+readme = "README.rst"
+requires-python = ">=3.10,<3.14"
+authors = [
+    { name = "Colour Developers", email = "colour-developers@colour-science.org" },
+]
+maintainers = [
+    { name = "Colour Developers", email = "colour-developers@colour-science.org" }
+]
+license = { text = "BSD-3-Clause" }
 keywords = [
     "color",
     "color-science",
@@ -37,39 +40,59 @@ classifiers = [
     "Topic :: Scientific/Engineering",
     "Topic :: Software Development"
 ]
+dependencies = [
+    "colour-science>=0.4.5",
+    "glfw>=2,<3",
+    "imageio>=2,<3",
+    "networkx>=3,<4",
+    "numpy>=1.24,<3",
+    "pygfx>=0.1,<0.3",
+    "scipy>=1.10,<2",
+    "matplotlib>=3.7",
+]
 
-[tool.poetry.dependencies]
-python = ">= 3.9, < 3.13"
-colour-science = ">= 0.4.4, < 0.5"
-glfw = ">= 2, < 3"
-imageio = ">= 2, < 3"
-networkx = ">= 2.7, < 3"
-numpy = ">= 1.22, < 2"
-pygfx = ">= 0.1, < 0.3"
-scipy = ">= 1.8, < 2"
-matplotlib = "^3.8.1"
+[project.optional-dependencies]
+docs = [
+    "biblib-simple",
+    "pydata-sphinx-theme",
+    "restructuredtext-lint",
+    "sphinx",
+    "sphinxcontrib-bibtex",
+]
 
-[tool.poetry.group.dev.dependencies]
-coverage = ">= 6, < 7"
-coveralls = "*"
-invoke = "*"
-jupyter = "*"
-pre-commit = ">= 3.5"
-pyright = "*"
-pytest = "*"
-pytest-cov = "*"
-pytest-xdist = "*"
-toml = "*"
-twine = "*"
+[project.urls]
+Homepage = "https://www.colour-science.org"
+Documentation = "https://colour-visuals.readthedocs.org"
+Repository = "https://github.com/colour-science/colour-visuals"
+Issues = "https://github.com/colour-science/colour-visuals/issues"
+Changelog = "https://github.com/colour-science/colour-visuals/releases"
 
-[tool.poetry.group.docs.dependencies]
-matplotlib = ">= 3.5, != 3.5.0, != 3.5.1"
-pydata-sphinx-theme = "*"
-restructuredtext-lint = "*"
-sphinx = "*"
+[tool.uv]
+package = true
+dev-dependencies = [
+    "coverage",
+    "coveralls",
+    "hatch",
+    "invoke",
+    "jupyter",
+    "pre-commit",
+    "pyright",
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    "toml",
+    "twine",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [ "colour_visuals" ]
 
 [tool.codespell]
-skip = 'BIBLIOGRAPHY.bib,CONTRIBUTORS.rst'
+skip = "BIBLIOGRAPHY.bib,CONTRIBUTORS.rst"
 
 [tool.flynt]
 line_length=999
@@ -96,7 +119,7 @@ reportUnusedExpression = false
 addopts = "-n auto --dist=loadscope --durations=5"
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py310"
 line-length = 88
 select = [
     "A", # flake8-builtins
@@ -173,6 +196,7 @@ ignore = [
     "RET508",
     "TRY003",
     "TRY300",
+    "UP038",
 ]
 typing-modules = ["colour.hints"]
 fixable = ["B", "C", "E", "F", "PIE", "RUF", "SIM", "UP", "W"]
@@ -189,7 +213,3 @@ convention = "numpy"
 
 [tool.ruff.format]
 docstring-code-format = true
-
-[build-system]
-requires = [ "poetry_core>=1.0.0" ]
-build-backend = "poetry.core.masonry.api"
